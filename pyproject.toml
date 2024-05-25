@@ -12,6 +12,9 @@ pick = "^2.3.2"
 pytest = "^8.2.1"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^5.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

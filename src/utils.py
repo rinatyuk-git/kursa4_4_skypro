@@ -6,7 +6,7 @@ from pick import pick
 
 class UserInteraction:
     """Класс для создания пользовательских функций"""
-    def __init__(self, hh_api: HHApi, worker: JSONWorker, vac_model):
+    def __init__(self, hh_api: HHApi, worker: JSONWorker, vac_model) -> list:
         self.vac_model = vac_model
         self.hh_api = hh_api
         self.worker = worker
@@ -36,7 +36,7 @@ class UserInteraction:
         self.temp_result = [obj for obj in self.temp_result if obj.is_matching(filter_key)]
         self.print_result()
 
-    def get_top_n(self):
+    def get_top_n(self) -> list:
         """Метод для создания отчета по TOP N"""
         top_n_user = int(self.check_values("Введите количество вакансий для вывода в топ N:"))
         result_top_n_sort = sorted(self.temp_result, reverse=True)

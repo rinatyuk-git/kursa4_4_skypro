@@ -54,7 +54,7 @@ class JSONWorker(BaseWorker):
         """Метод для чтения файла на локальном хранилище"""
         return self.__read_json()
 
-    def add_vacancies(self, vacancies):
+    def add_vacancies(self, vacancies) -> list:
         """Метод для добавления списка вакансий в файл на локальном хранилище"""
         data = self.__read_json()
         data.extend([vacancy.to_dict() for vacancy in vacancies])
@@ -66,7 +66,7 @@ class JSONWorker(BaseWorker):
         data = [line for line in data if line != vacancy.to_dict()]
         self.__write_json(data)
 
-    def see_vacancy(self, filter_word):
+    def see_vacancy(self, filter_word) -> list:
         """Метод для просмотра вакансии в файле на локальном хранилище"""
         data = self.__read_json()
         result = []

@@ -16,7 +16,7 @@ class HHApi(BaseAPI):
             'per_page': 100
         }
 
-    def get_vacancies(self, keyword, vac_qty):
+    def get_vacancies(self, keyword, vac_qty) -> dict:
         """Метод для загрузки данных согласно сутруктуры запроса"""
         self.params.update({'text': keyword, 'per_page': vac_qty})
         response = requests.get(self.url, params=self.params)

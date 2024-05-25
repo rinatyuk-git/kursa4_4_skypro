@@ -1,6 +1,6 @@
 class Vacancy:
     """Класс для создания/построения структуры вакансий"""
-    def __init__(self, name, salary_from, salary_to, city, url, requirement, responsibility, employment):
+    def __init__(self, name, salary_from, salary_to, city, url, requirement, responsibility, employment) -> list:
         """Конструктор для создания карточки вакансии с необходимыми полями"""
         self.name = name
         self.salary_from = salary_from
@@ -30,7 +30,7 @@ class Vacancy:
             return
 
     @classmethod
-    def create_vacancies(cls, vacancies_data):
+    def create_vacancies(cls, vacancies_data) -> list:
         """Метод для создания карточки вакансий"""
         result = []
         for line in vacancies_data:
@@ -46,7 +46,7 @@ class Vacancy:
             result.append(vacancy)
         return result
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         """Метод для форматирования карточки вакансий"""
         return {
             'name': self.name,
