@@ -15,14 +15,12 @@ class HHApi(BaseAPI):
             'page': 0,
             'per_page': 100
         }
-        # pass
 
     def get_vacancies(self, keyword, vac_qty):
         """Метод для загрузки данных согласно сутруктуры запроса"""
         self.params.update({'text': keyword, 'per_page': vac_qty})
         response = requests.get(self.url, params=self.params)
         return response.json()['items']
-        # pass
 
 
 hh_api = HHApi()
