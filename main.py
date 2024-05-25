@@ -1,4 +1,4 @@
-from src.service import menu
+from src.utils import menu
 
 
 if __name__ == '__main__':
