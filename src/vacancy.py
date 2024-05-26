@@ -10,7 +10,7 @@ class Vacancy:
         self.requirement = requirement
         self.responsibility = responsibility
         self.employment = employment
-        self.validate1()
+        self.__validate1()
 
     @staticmethod
     def validate(salary, key):
@@ -19,7 +19,7 @@ class Vacancy:
             return 0
         return salary[key] or 0
 
-    def validate1(self):
+    def __validate1(self):
         """Метод для валидации прочих полей"""
         if not self.requirement:
             self.requirement = 'Отстутсвует'
