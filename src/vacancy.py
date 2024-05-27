@@ -13,7 +13,7 @@ class Vacancy:
         self.__validate1()
 
     @staticmethod
-    def validate(salary, key):
+    def __validate(salary, key):
         """Метод для валидации значений поля Зарплата"""
         if not salary:
             return 0
@@ -36,8 +36,8 @@ class Vacancy:
         for line in vacancies_data:
             name = line['name']
             url = line['alternate_url']
-            salary_from = cls.validate(line['salary'],'from')
-            salary_to = cls.validate(line['salary'], 'to')
+            salary_from = cls.__validate(line['salary'],'from')
+            salary_to = cls.__validate(line['salary'], 'to')
             requirement = line['snippet']['requirement']
             responsibility = line['snippet']['responsibility']
             city = line['area']['name']
